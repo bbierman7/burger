@@ -17,3 +17,12 @@ li {
   .form-group {
     margin-bottom: 5px;
   }
+
+  .fas{
+    float: right;
+  }
+
+  .burgerDiv{
+    width: 40%;
+    margin:0 auto;
+  }
