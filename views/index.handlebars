@@ -1,16 +1,15 @@
 <h1>Burgers</h1>
 
 <h2>Eat Da Burger</h2>
-
 <ul>
   {{#each burgers}}
   {{#unless devoured}}
   <div class="burgerDiv">
     <form action="/api/burgers/{{this.id}}" method="POST">
-    {{this.name}}
-    <button type="submit">
-      <i class="fas fa-utensils"></i>
-    </button>
+      {{this.name}}
+      <button type="submit">
+        <i class="fas fa-utensils"></i>
+      </button>
     </form>
   </div>
   {{/unless}}
@@ -22,10 +21,27 @@
 <ul>
   {{#each burgers}}
   {{#if devoured}}
-  {{> burgers/burger-block devour=true}}
+
+  <li>
+    <div class="burgerDiv">
+      {{this.name}}
+    </div>
+  </li>
+
   {{/if}}
   {{/each}}
 </ul>
+
+
+
+
+{{!-- <ul>
+  {{#each burgers}}
+  {{#if devoured}}
+  {{> burgers/burger-block devour=true}}
+  {{/if}}
+  {{/each}}
+</ul> --}}
 
 <h2>Add a Burger</h2>
 <form class="create-form" action="/api/burgers" method="POST">
